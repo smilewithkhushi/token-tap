@@ -2,6 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Base Brand Colors and Custom Properties */
+:root {
+  /* Base Brand Colors */
+  --base-blue: #0052FF;
+  --base-blue-light: #0066FF;
+  --base-blue-dark: #003ACC;
+  --base-purple: #8B5CF6;
+  --base-purple-light: #A78BFA;
+  --base-purple-dark: #7C3AED;
+  
+  /* Gradient Colors */
+  --gradient-start: #0052FF;
+  --gradient-middle: #1E40AF;
+  --gradient-end: #8B5CF6;
+  
+  /* Dark Theme Colors */
+  --bg-primary: #0F172A;
+  --bg-secondary: #1E293B;
+  --bg-tertiary: #334155;
+  --text-primary: #F8FAFC;
+  --text-secondary: #CBD5E1;
+  --text-muted: #64748B;
+}
+
 /* Global Styles */
 * {
   box-sizing: border-box;
@@ -9,52 +33,226 @@
   margin: 0;
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  /* Base-inspired gradient background */
+  background: linear-gradient(
+    135deg,
+    var(--base-blue-dark) 0%,
+    #1E293B 25%,
+    #0F172A  50%,
+    #1E1B4B 75%,
+    var(--base-purple-dark) 100%
+  );
+  
+  /* Alternative animated gradient */
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  
+  color: var(--text-primary);
   min-height: 100vh;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  position: relative;
 }
 
-/* Custom Gradient Background */
-.gradient-bg {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  background-attachment: fixed;
-}
-
-/* Glass Effect */
-.glass {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-/* Animation for success states */
-@keyframes pulse {
-  0%, 100% {
-    opacity: 1;
+/* Animated gradient background */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
   }
   50% {
-    opacity: .5;
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 
-.animate-pulse {
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+/* Base-themed gradient overlays */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(0, 82, 255, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(30, 64, 175, 0.2) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: -1;
 }
 
-/* Loading spinner */
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--base-blue), var(--base-purple));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--base-blue-light), var(--base-purple-light));
+}
+
+/* Custom utility classes */
+@layer utilities {
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-400 via-blue-500 to-purple-500 bg-clip-text text-transparent;
+  }
+  
+  .gradient-border {
+    @apply border border-transparent bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-border;
+  }
+  
+  .glass-effect {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10;
+  }
+  
+  .base-gradient {
+    background: linear-gradient(135deg, var(--base-blue) 0%, var(--base-purple) 100%);
+  }
+  
+  .base-gradient-subtle {
+    background: linear-gradient(135deg, rgba(0, 82, 255, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
   }
 }
 
-.animate-spin {
-  animation: spin 1s linear infinite;
+/* Component-specific styles */
+.card-glow {
+  box-shadow: 
+    0 0 20px rgba(0, 82, 255, 0.1),
+    0 0 40px rgba(139, 92, 246, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.card-glow:hover {
+  box-shadow: 
+    0 0 30px rgba(0, 82, 255, 0.2),
+    0 0 60px rgba(139, 92, 246, 0.1);
+}
+
+/* Button hover effects */
+.btn-base {
+  @apply relative overflow-hidden transition-all duration-300;
+}
+
+.btn-base::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-base:hover::before {
+  left: 100%;
+}
+
+/* Loading animations */
+@keyframes pulse-blue {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(0, 82, 255, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(0, 82, 255, 0);
+  }
+}
+
+.pulse-blue {
+  animation: pulse-blue 2s infinite;
+}
+
+/* Responsive design improvements */
+@media (max-width: 768px) {
+  body {
+    background-size: 600% 600%;
+  }
+}
+
+/* Focus states for accessibility */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  @apply outline-none ring-2 ring-blue-500 ring-offset-2 ring-offset-gray-900;
+}
+
+/* Selection colors */
+::selection {
+  background: rgba(0, 82, 255, 0.3);
+  color: white;
+}
+
+::-moz-selection {
+  background: rgba(0, 82, 255, 0.3);
+  color: white;
+}
+
+/* Typography improvements */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-semibold leading-tight;
+}
+
+/* Link styles */
+a {
+  @apply transition-colors duration-200;
+}
+
+/* Form elements */
+input, textarea, select {
+  @apply transition-all duration-200;
+}
+
+input:focus, textarea:focus, select:focus {
+  @apply ring-2 ring-blue-500 ring-opacity-50;
+}
+
+/* Table styles */
+table {
+  @apply w-full border-collapse;
+}
+
+th, td {
+  @apply border-b border-gray-700 p-3 text-left;
+}
+
+th {
+  @apply bg-gray-800/50 font-semibold;
+}
+
+/* Code blocks */
+code {
+  @apply bg-gray-800 text-blue-300 px-2 py-1 rounded text-sm font-mono;
+}
+
+pre {
+  @apply bg-gray-800 p-4 rounded-lg overflow-x-auto;
+}
+
+/* Utility for hiding scrollbar but keeping functionality */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }

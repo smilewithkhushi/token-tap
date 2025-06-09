@@ -20,11 +20,51 @@ A streamlined Web3 application built on Base that enables users to claim tokens 
 - Base network added to your wallet
 - Some ETH on Base for gas fees
 
+## 🖼️ Screenshots
+
+### Smart Contract Deployment
+![Deployed Smart Contract](./screenshots/1-sc-deployed.png)
+
+### dApp Overview
+![dApp Overview](./screenshots/2-frontend.png)
+
+### Claim Faucet
+![Claim Faucet](./screenshots/3-claim-faucet.png)
+![Confirm Transaction](./screenshots/4-confirm-transaction.png)
+
+### Success
+![Claimed Faucet](./screenshots/5-faucet-success.png)
+![Transaction Successful](5-trans-success.png)
+
+### Transaction on BaseScan
+![Basescan activity] (6-sepolia-basescan.png)
+
+## 🔧 Technology Stack
+
+- **Frontend**: Next.js
+- **Blockchain**: Base (Ethereum L2)
+- **Smart Contracts**: Solidity, Hardhat
+- **Web3 Integration**: Mini-kit
+- **Styling**: Tailwind CSS, Shadcn
+
+## 📱 Usage
+
+1. **Connect Wallet**: Click "Connect Wallet" and select your preferred wallet
+2. **Switch to Base**: Ensure you're connected to the Base network
+3. **Claim Tokens**: Click "Claim Tokens" to receive tokens instantly
+4. **View Balance**: Check your wallet to see the received tokens
+
+## 🌐 Links
+
+- **Base Scan**: [Faucet Claim - Transaction Successful](https://sepolia.basescan.org/tx/0x6e1fd1400c235e13d413c1043be8f6217269a4eb2ac61e7985b7082336e03399)
+
+
+
 ### Installation
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/token-tap.git
+git clone https://github.com/smilewithkhushi/token-tap.git
 cd token-tap
 ```
 
@@ -44,38 +84,6 @@ cp .env.example .env
 npm run dev
 ```
 
-## 🖼️ Screenshots
-
-### Main Interface
-![Token Tap Interface](./screenshots/main-interface.png)
-
-### Wallet Connection
-![Wallet Connection](./screenshots/wallet-connection.png)
-
-### Token Claim Success
-![Claim Success](./screenshots/claim-success.png)
-
-## 🔧 Technology Stack
-
-- **Frontend**: React.js / Next.js
-- **Blockchain**: Base (Ethereum L2)
-- **Smart Contracts**: Solidity
-- **Web3 Integration**: wagmi, viem
-- **Styling**: Tailwind CSS
-
-## 📱 Usage
-
-1. **Connect Wallet**: Click "Connect Wallet" and select your preferred wallet
-2. **Switch to Base**: Ensure you're connected to the Base network
-3. **Claim Tokens**: Click "Claim Tokens" to receive tokens instantly
-4. **View Balance**: Check your wallet to see the received tokens
-
-## 🌐 Links
-
-- **Live Demo**: [https://token-tap.vercel.app](https://token-tap.vercel.app)
-- **Base Network**: [https://base.org](https://base.org)
-- **Documentation**: [https://docs.token-tap.com](https://docs.token-tap.com)
-
 ## 🤝 Contributing
 
 1. Fork the repository
@@ -83,20 +91,6 @@ npm run dev
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- Built on [Base](https://base.org) - Coinbase's Ethereum L2
-- Inspired by the need for simplified token distribution
-- Thanks to the Web3 community for continuous innovation
-
-## 📞 Support
-
-For support, email support@token-tap.com or join our [Discord](https://discord.gg/token-tap).
 
 ---
 

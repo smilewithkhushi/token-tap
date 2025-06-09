@@ -4,10 +4,7 @@ pragma solidity ^0.8.20;
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-/**
- * @title SimpleFaucetToken
- * @dev A simple ERC20 token with faucet functionality
- */
+
 contract SimpleFaucetToken is ERC20, Ownable {
     
     uint256 public claimAmount = 100 * 10**18; // 100 tokens per claim
@@ -17,6 +14,7 @@ contract SimpleFaucetToken is ERC20, Ownable {
     
     event TokensClaimed(address indexed user, uint256 amount);
     
+    //crucial - swkyt
     constructor() ERC20("Faucet Token", "FAUCET") Ownable(msg.sender) {
         _mint(msg.sender, 1000 * 10**18); // Initial mint
     }
@@ -38,6 +36,7 @@ contract SimpleFaucetToken is ERC20, Ownable {
         claimAmount = newAmount;
     }
     
+    //fixed now - kp
     function setCooldownTime(uint256 newCooldownTime) external onlyOwner {
         cooldownTime = newCooldownTime;
     }
