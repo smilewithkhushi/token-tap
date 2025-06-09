@@ -21,8 +21,6 @@ A streamlined Web3 application built on Base that enables users to claim tokens 
 - Some ETH on Base for gas fees
 
 ## 🖼️ Screenshots
-
-| Screenshot | Description |
 |------------|-------------|
 | **Smart Contract Deployment** | **dApp Overview** |
 | ![Deployed Smart Contract](./screenshots/1-sc-deployed.png) | ![dApp Overview](./screenshots/2-frontend.png) |
