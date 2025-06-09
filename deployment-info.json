@@ -1,0 +1,14 @@
+{
+  "network": "baseSepolia",
+  "contractAddress": "0x099d98426B916D12e2670702540ad8B659c3BDE2",
+  "deployerAddress": "0xb1D5db6912957284506d3EB4fF1fE33b703A57AE",
+  "deploymentTime": "2025-06-07T15:07:56.257Z",
+  "tokenInfo": {
+    "name": "Faucet Token",
+    "symbol": "FAUCET",
+    "decimals": 18,
+    "claimAmount": "100.0",
+    "cooldownTime": 86400,
+    "maxSupply": "1000000.0"
+  }
+}
