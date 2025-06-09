@@ -24,13 +24,14 @@ A streamlined Web3 application built on Base that enables users to claim tokens 
 
 | Screenshot | Description |
 |------------|-------------|
-| ![Deployed Smart Contract](./screenshots/1-sc-deployed.png) | **Smart Contract Deployment** |
-| ![dApp Overview](./screenshots/2-frontend.png) | **dApp Overview** |
-| ![Claim Faucet](./screenshots/3-claim-faucet.png) | **Claim Faucet** |
-| ![Confirm Transaction](./screenshots/4-confirm-transaction.png) | **Confirm Transaction** |
-| ![Claimed Faucet](./screenshots/5-faucet-success.png) | **Success - Faucet Claimed** |
-| ![Transaction Successful](./screenshots/5-trans-success.png) | **Transaction Successful** |
-| ![BaseScan Activity](./screenshots/6-sepolia-basescan.png) | **Transaction on BaseScan** |
+| **Smart Contract Deployment** | **dApp Overview** |
+| ![Deployed Smart Contract](./screenshots/1-sc-deployed.png) | ![dApp Overview](./screenshots/2-frontend.png) |
+| **Claim Faucet** | **Confirm Transaction** |
+| ![Claim Faucet](./screenshots/3-claim-faucet.png) | ![Confirm Transaction](./screenshots/4-confirm-transaction.png) | 
+| **Success - Faucet Claimed** | **Transaction Successful** |
+| ![Claimed Faucet](./screenshots/5-faucet-success.png) | ![Transaction Successful](./screenshots/5-trans-success.png)  |
+| **Transaction on BaseScan** |  |
+| ![BaseScan Activity](./screenshots/6-sepolia-basescan.png) |  |
 
 ## 🔧 Technology Stack
 
